@@ -1,3 +1,5 @@
+> Note: Some links might not be working or images might not be showing due to some rearrangements of directories. sorry
+
 Samisthebest1!
 # SamaZon
 ## Directory management
