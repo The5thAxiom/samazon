@@ -1,0 +1,279 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.slogan-heading {
+    color: #5E81AC;
+}
+
+html {
+    font-family: Verdana;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #3B4252;
+    color: #D8DEE9;
+    margin: 30px 10px;
+    border: 0%;
+    padding: 0%;
+}
+
+.samazon {
+    background-image: linear-gradient(90deg, #A3BE8C, #D8DEE9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.fullimage {
+    width: 100%;
+    z-index: 0;
+}
+
+.sectionimage {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.smallimage {
+    width: 20%;
+    margin: 2% 2%;
+    align-self: center;
+    z-index: 0;
+}
+
+.smallimage:hover {
+    width: 30%;
+}
+
+.smallimage:active {
+    width: 20%;
+}
+
+.slogan {
+    text-align: center;
+    padding: 50px;
+    font-family: 'Segoe UI';
+    font-size: xxx-large;
+    font-weight: bold;
+    background-image: linear-gradient(90deg, #D8DEE9, #5E81AC);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+/*forms*/
+
+fieldset {
+    align-self: center;
+    width: 80%;
+    margin: 1%;
+    padding: 3% 5%;
+    border-color: #3B4252;
+    border-radius: 10px;
+}
+
+legend,
+label,
+.formtext {
+    color: #5E81AC;
+}
+
+.text {
+    background-color: #4C566A;
+    height: 35px;
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    color: #D8DEE9;
+    border-style: solid;
+    border-color: #5E81AC;
+    border-radius: 10px;
+}
+
+#phone_no {
+    width: 85%;
+    margin: 0%;
+    padding: 0%;
+    float: right;
+}
+
+#country_code {
+    width: 10%;
+    margin: 0%;
+    padding: 0%;
+    float: left;
+}
+
+input:focus :active {
+    background-color: #5E81AC;
+    outline: 0 !important;
+}
+
+input:current {
+    background-color: #A3BE8C;
+}
+
+button,
+input.button {
+    background-color: #5E81AC;
+    border: #5E81AC;
+    color: #2E3440;
+    height: 35px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover,
+input.button:hover {
+    background-color: #81A1C1;
+    border: #81A1C1;
+    color: #2E3440;
+}
+
+button:active,
+input.button:active {
+    background-color: #D08770;
+    border: #D08770;
+    color: #2E3440;
+}
+
+
+/* The Layout */
+
+.layout-box {
+    margin: 1% 1% 1% 1%;
+    border-radius: 10px;
+}
+
+header {
+    border-radius: 10px;
+    padding: 2% 2%;
+    margin: 1% 1% 1% 1%;
+    text-align: center;
+    background: #4C566A;
+}
+
+header.small {
+    padding: 0.5% 0%
+}
+
+footer {
+    border-radius: 10px;
+    margin: 1% 1% 1% 1%;
+    padding: 1% 2%;
+    float: bottom;
+    text-align: center;
+    background: #4C566A;
+}
+
+nav {
+    margin: 1% 1% 1% 1%;
+    border-radius: 10px;
+    padding: 1% 2%;
+    text-align: left;
+    background: #434C5E;
+}
+
+nav.top {
+    margin-top: 2%;
+}
+
+nav.bottom {
+    margin-bottom: 2%;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+aside {
+    margin: 1% 1% 1% 1%;
+    padding: 1% 2%;
+    display: inline;
+    border-radius: 10px;
+    float: right;
+    width: 20%;
+    height: auto;
+    text-align: center;
+    background: #4C566A;
+}
+
+article {
+    margin: 1% 1% 1% 1%;
+    padding: 1% 2%;
+    display: inline;
+    border-radius: 10px;
+    width: 68%;
+    float: left;
+    text-align: left;
+    background: #2E3440;
+}
+
+article.full {
+    width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+    aside,
+    article {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+
+/* Links */
+
+a:link {
+    color: #81A1C1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #88C0D0;
+}
+
+a:active {
+    color: #D08770;
+}
+
+a.navlink:visited {
+    color: #81A1C1;
+}
+
+a:visited {
+    color: #B48EAD;
+}
+
+a:visited:hover {
+    color: #88C0D0;
+}
+
+a:visited:active {
+    color: #D08770;
+}
+
+
+/* Tables and such */
+
+table,
+th,
+td {
+    border: 1px solid white;
+    padding: 3px;
+    border-collapse: collapse;
+    word-break: break-all;
+}
+
+table {
+    width: 100%;
+}
