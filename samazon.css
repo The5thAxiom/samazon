@@ -5,7 +5,7 @@ h4,
 h5,
 h6,
 .slogan-heading {
-    color: #5E81AC;
+    color: #5e81ac;
 }
 
 html {
@@ -14,15 +14,15 @@ html {
 }
 
 body {
-    background: #3B4252;
-    color: #D8DEE9;
+    background: #3b4252;
+    color: #d8dee9;
     margin: 30px 10px;
     border: 0%;
     padding: 0%;
 }
 
 .samazon {
-    background-image: linear-gradient(90deg, #A3BE8C, #D8DEE9);
+    background-image: linear-gradient(90deg, #a3be8c, #d8dee9);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -47,7 +47,7 @@ body {
 }
 
 .smallimage:hover {
-    width: 30%;
+    transform: scale(1.5);
 }
 
 .smallimage:active {
@@ -60,12 +60,11 @@ body {
     font-family: 'Segoe UI';
     font-size: xxx-large;
     font-weight: bold;
-    background-image: linear-gradient(90deg, #D8DEE9, #5E81AC);
+    background-image: linear-gradient(90deg, #d8dee9, #5e81ac);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
-
 
 /*forms*/
 
@@ -74,25 +73,25 @@ fieldset {
     width: 80%;
     margin: 1%;
     padding: 3% 5%;
-    border-color: #3B4252;
+    border-color: #3b4252;
     border-radius: 10px;
 }
 
 legend,
 label,
 .formtext {
-    color: #5E81AC;
+    color: #5e81ac;
 }
 
 .text {
-    background-color: #4C566A;
+    background-color: #4c566a;
     height: 35px;
     margin: 0%;
     padding: 0%;
     width: 100%;
-    color: #D8DEE9;
+    color: #d8dee9;
     border-style: solid;
-    border-color: #5E81AC;
+    border-color: #5e81ac;
     border-radius: 10px;
 }
 
@@ -111,19 +110,19 @@ label,
 }
 
 input:focus :active {
-    background-color: #5E81AC;
+    background-color: #5e81ac;
     outline: 0 !important;
 }
 
 input:current {
-    background-color: #A3BE8C;
+    background-color: #a3be8c;
 }
 
 button,
 input.button {
-    background-color: #5E81AC;
-    border: #5E81AC;
-    color: #2E3440;
+    background-color: #5e81ac;
+    border: #5e81ac;
+    color: #2e3440;
     height: 35px;
     padding: 10px;
     border-radius: 10px;
@@ -132,18 +131,17 @@ input.button {
 
 button:hover,
 input.button:hover {
-    background-color: #81A1C1;
-    border: #81A1C1;
-    color: #2E3440;
+    background-color: #81a1c1;
+    border: #81a1c1;
+    color: #2e3440;
 }
 
 button:active,
 input.button:active {
-    background-color: #D08770;
-    border: #D08770;
-    color: #2E3440;
+    background-color: #d08770;
+    border: #d08770;
+    color: #2e3440;
 }
-
 
 /* The Layout */
 
@@ -157,11 +155,11 @@ header {
     padding: 2% 2%;
     margin: 1% 1% 1% 1%;
     text-align: center;
-    background: #4C566A;
+    background: #4c566a;
 }
 
 header.small {
-    padding: 0.5% 0%
+    padding: 0.5% 0%;
 }
 
 footer {
@@ -170,7 +168,7 @@ footer {
     padding: 1% 2%;
     float: bottom;
     text-align: center;
-    background: #4C566A;
+    background: #4c566a;
 }
 
 nav {
@@ -178,7 +176,7 @@ nav {
     border-radius: 10px;
     padding: 1% 2%;
     text-align: left;
-    background: #434C5E;
+    background: #434c5e;
 }
 
 nav.top {
@@ -203,7 +201,7 @@ aside {
     width: 20%;
     height: auto;
     text-align: center;
-    background: #4C566A;
+    background: #4c566a;
 }
 
 article {
@@ -214,7 +212,7 @@ article {
     width: 68%;
     float: left;
     text-align: left;
-    background: #2E3440;
+    background: #2e3440;
 }
 
 article.full {
@@ -229,39 +227,37 @@ article.full {
     }
 }
 
-
 /* Links */
 
 a:link {
-    color: #81A1C1;
+    color: #81a1c1;
     text-decoration: none;
     font-weight: bold;
 }
 
 a:hover {
-    color: #88C0D0;
+    color: #88c0d0;
 }
 
 a:active {
-    color: #D08770;
+    color: #d08770;
 }
 
 a.navlink:visited {
-    color: #81A1C1;
+    color: #81a1c1;
 }
 
 a:visited {
-    color: #B48EAD;
+    color: #b48ead;
 }
 
 a:visited:hover {
-    color: #88C0D0;
+    color: #88c0d0;
 }
 
 a:visited:active {
-    color: #D08770;
+    color: #d08770;
 }
-
 
 /* Tables and such */
 

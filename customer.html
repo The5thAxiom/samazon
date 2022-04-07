@@ -1,100 +1,114 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="samazon.css" />
+        <title>SamaZon | Name</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="samazon.css">
-    <title>SamaZon | Name </title>
-</head>
-
-<body>
-    <header class="small">
-        <h1>SamaZon</h1>
-    </header>
-    <nav class="top">
-        <a class="navlink" href="#">Profile</a> |
-        <a class="navlink" href="#">Cart</a> |
-        <a class="navlink" href="#">Wishlists</a> |
-        <a class="navlink" href="#">Recents</a> |
-        <a class="navlink" href="login.html">Logout</a>
-    </nav>
-    <section>
-        <article>
-            <div class="slogan">Hello <span class="name"></span></div>
-            <a href="#">
-                <h2 id="Search">Search</h2>
-            </a>
-            <input class="text" placeholder="From over num items" style="width: 100%" type="search">
-            <hr>
-            <a href="#">
-                <h2 id="NewItems">New Items</h2>
-            </a>
-            dummy images<br>
-            <img class="sectionimage" src="box.jpg"> dummy images<br>
-            <img class="sectionimage" src="box.jpg"> dummy images<br>
-            <img class="sectionimage" src="box.jpg">
-            <hr>
-            <a href="#">
-                <h2 id="Categories">Categories</h2>
-            </a>
-            a<br> a
-            <br> a
-            <br> a
-            <br> a
-            <br> a
-            <br> a
-            <br> a
-            <br> a
-            <br> a
-            <br> a
-            <br> a
-            <br> a
-            <br> a
-            <br> a
-            <br>
-            <hr>
-            <a href="#">
-                <h2 id="UpcomingSellers">Upcoming sellers</h2>
-            </a>
-            recent items here<br>
-            <hr>
-            <a href="#">
-                <h2 id="BuyAgain">Buy Again</h2>
-            </a>
-            These will be dummy images gotten from the user buying history<br> dummy images<br>
-            <img class="sectionimage" src="box.jpg"> dummy images<br>
-            <img class="sectionimage" src="box.jpg"> dummy images<br>
-            <img class="sectionimage" src="box.jpg">
-        </article>
-        <aside id="aside">
-            <a class="navlink" href="#Search">Search</a><br>
-            <hr>
-            <a class="navlink" href="#NewItems">New Items</a><br>
-            <hr>
-            <a class="navlink" href="#Categories">Categories</a><br>
-            <hr>
-            <a class="navlink" href="#UpcomingSellers">Upcoming Sellers</a><br>
-            <hr>
-            <a class="navlink" href="#BuyAgain">Buy Again</a><br>
-            <hr>
-        </aside>
-    </section>
-    <nav class="bottom">
-        <a class="navlink" href="#">Top</a> |
-        <a class="navlink" href="index.php">Home</a> |
-        <a class="navlink" href="login.html">Logout</a> |
-        <a class="navlink" href="about.html">About SamaZon</a>
-    </nav>
-    <footer>
-        <a href="index.php"><img src="logo2.jpg" class="smallimage"></a><br> Made by Sam
-    </footer>
-</body>
-<script>
-    var nameElements = document.getElementsByClassName("name");
-    for (var i = 0; i < nameElements.length; i++) {
-        nameElements[i].innerHTML = "Sam";
-    }
-</script>
-
+    <body>
+        <header class="small">
+            <h1>SamaZon</h1>
+        </header>
+        <nav class="top">
+            <a class="navlink" href="#">Profile</a> |
+            <a class="navlink" href="#">Cart</a> |
+            <a class="navlink" href="#">Wishlists</a> |
+            <a class="navlink" href="#">Recents</a> |
+            <a class="navlink" href="login.html">Logout</a>
+        </nav>
+        <section>
+            <article>
+                <div class="slogan">Hello <span class="name"></span></div>
+                <a href="#">
+                    <h2 id="Search">Search</h2>
+                </a>
+                <input
+                    class="text"
+                    placeholder="From over num items"
+                    style="width: 100%"
+                    type="search"
+                />
+                <hr />
+                <a href="#">
+                    <h2 id="NewItems">New Items</h2>
+                </a>
+                dummy images<br />
+                <img class="sectionimage" src="images/box.jpg" /> dummy
+                images<br />
+                <img class="sectionimage" src="images/box.jpg" /> dummy
+                images<br />
+                <img class="sectionimage" src="images/box.jpg" />
+                <hr />
+                <a href="#">
+                    <h2 id="Categories">Categories</h2>
+                </a>
+                a<br />
+                a <br />
+                a <br />
+                a <br />
+                a <br />
+                a <br />
+                a <br />
+                a <br />
+                a <br />
+                a <br />
+                a <br />
+                a <br />
+                a <br />
+                a <br />
+                a
+                <br />
+                <hr />
+                <a href="#">
+                    <h2 id="UpcomingSellers">Upcoming sellers</h2>
+                </a>
+                recent items here<br />
+                <hr />
+                <a href="#">
+                    <h2 id="BuyAgain">Buy Again</h2>
+                </a>
+                These will be dummy images gotten from the user buying
+                history<br />
+                dummy images<br />
+                <img class="sectionimage" src="images/box.jpg" /> dummy
+                images<br />
+                <img class="sectionimage" src="images/box.jpg" /> dummy
+                images<br />
+                <img class="sectionimage" src="images/box.jpg" />
+            </article>
+            <aside id="aside">
+                <a class="navlink" href="#Search">Search</a><br />
+                <hr />
+                <a class="navlink" href="#NewItems">New Items</a><br />
+                <hr />
+                <a class="navlink" href="#Categories">Categories</a><br />
+                <hr />
+                <a class="navlink" href="#UpcomingSellers">Upcoming Sellers</a
+                ><br />
+                <hr />
+                <a class="navlink" href="#BuyAgain">Buy Again</a><br />
+                <hr />
+            </aside>
+        </section>
+        <nav class="bottom">
+            <a class="navlink" href="#">Top</a> |
+            <a class="navlink" href="index.php">Home</a> |
+            <a class="navlink" href="login.html">Logout</a> |
+            <a class="navlink" href="about.html">About SamaZon</a>
+        </nav>
+        <footer>
+            <a href="index.php"
+                ><img src="images/logo2.jpg" class="smallimage" /></a
+            ><br />
+            Made by Sam
+        </footer>
+    </body>
+    <script>
+        var nameElements = document.getElementsByClassName('name');
+        for (var i = 0; i < nameElements.length; i++) {
+            nameElements[i].innerHTML = 'Sam';
+        }
+    </script>
 </html>

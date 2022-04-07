@@ -1,138 +1,313 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="samazon.css" />
+        <title>SamaZon | Register</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="samazon.css">
-    <title>SamaZon | Register</title>
-</head>
+    <body>
+        <header>
+            <h1>User Registration</h1>
+        </header>
+        <nav class="top">
+            <a class="navlink" href="index.php">Home</a> |
+            <a class="navlink" href="about.html">About</a> |
+            <a class="navlink" href="test.php"> test </a>
+        </nav>
+        <section>
+            <article class="full">
+                Welcome, thanks for starting your journey with
+                <span class="samazon">SamaZon</span>!!<br />
+                Becoming a new user entitles you to unique perks.<br />
+                Your soul will stand a chance at the trials after the ends just
+                by registering as a user!<br />
+                <h2>Enter your details here:</h2>
+                <form action="registration.php" method="post">
+                    <fieldset>
+                        <legend>Personal Details</legend>
+                        <label for="first_name">First Name (required):</label>
+                        <br />
+                        <input
+                            class="text"
+                            type="text"
+                            id="first_name"
+                            name="first_name"
+                            placeholder="Your first name"
+                            required
+                        />
+                        <br /><br />
+                        <label for="middle_name">Middle Name:</label> <br />
+                        <input
+                            class="text"
+                            type="text"
+                            id="middle_name"
+                            name="middle_name"
+                            placeholder="Your middle name"
+                        />
+                        <br /><br />
+                        <label for="last_name">Last Name (required):</label>
+                        <br />
+                        <input
+                            class="text"
+                            type="text"
+                            id="last_name"
+                            name="last_name"
+                            placeholder="Your last name"
+                            required
+                        />
+                        <br /><br />
+                        <label for="date_of_birth"
+                            >Date of Birth (required):</label
+                        >
+                        <br />
+                        <input
+                            class="text"
+                            type="date"
+                            id="date_of_birth"
+                            name="date_of_birth"
+                            required
+                        />
+                        <br /><br />
+                        <label for="gender">Gender (required):</label>
+                        <br />
+                        <input type="radio" name="gender" value="M" />
+                        <span class="formtext">Male</span> <br />
+                        <input type="radio" name="gender" value="F" />
+                        <span class="formtext">Female</span> <br />
+                        <input type="radio" name="gender" value="X" />
+                        <span class="formtext">Other</span> <br /><br />
+                        <label for="phone_no">Phone Number (required):</label>
+                        <br />
+                        <input
+                            class="text"
+                            type="number"
+                            id="country_code"
+                            name="country_code"
+                            placeholder="Code"
+                            required
+                        />
+                        <input
+                            class="text"
+                            type="number"
+                            id="phone_no"
+                            name="phone_no"
+                            placeholder="Phone Number"
+                            required
+                        />
+                        <br /><br /><br />
+                        <label for="email_id">Email ID (required):</label>
+                        <br />
+                        <input
+                            class="text"
+                            type="email"
+                            id="email_id"
+                            name="email_id"
+                            placeholder="Your Email ID"
+                            required
+                        />
+                    </fieldset>
+                    <br />
+                    <fieldset>
+                        <legend>Address</legend>
+                        <label for="house">House (required):</label> <br />
+                        <input
+                            class="text"
+                            type="text"
+                            id="house"
+                            name="house"
+                            placeholder="Your house number"
+                            required
+                        />
+                        <br /><br />
+                        <label for="street_name">Street Name:</label> <br />
+                        <input
+                            class="text"
+                            type="text"
+                            id="street_name"
+                            name="street_name"
+                            placeholder="Street Name"
+                        />
+                        <br /><br />
+                        <label for="locality">Locality:</label> <br />
+                        <input
+                            class="text"
+                            type="text"
+                            id="locality"
+                            name="locality"
+                            placeholder="Your locality"
+                        />
+                        <br /><br />
+                        <label for="city">City (required):</label> <br />
+                        <input
+                            class="text"
+                            type="text"
+                            id="city"
+                            name="city"
+                            placeholder="Your city"
+                            required
+                        />
+                        <br /><br />
+                        <label for="state">State (required):</label> <br />
+                        <input
+                            class="text"
+                            type="text"
+                            id="state"
+                            name="state"
+                            placeholder="Your state"
+                            required
+                        />
+                        <br /><br />
+                        <label for="pin_code">Pin Code (required):</label>
+                        <br />
+                        <input
+                            class="text"
+                            type="number"
+                            id="pin_code"
+                            name="pin_code"
+                            placeholder="Your Pin Code"
+                            required
+                        />
+                        <br /><br />
+                        <label for="contact_no"
+                            >Contact number (required):</label
+                        >
+                        <br />
+                        <input
+                            class="text"
+                            type="number"
+                            id="contact_no"
+                            name="contact_no"
+                            placeholder="Your Contact Number"
+                            required
+                        />
+                        <br /><br />
+                    </fieldset>
+                    <br />
+                    <fieldset>
+                        <legend>Card Details</legend>
+                        <label for="card_no">Card Number (required):</label>
+                        <br />
+                        <input
+                            class="text"
+                            type="text"
+                            id="card_no"
+                            name="card_no"
+                            placeholder="Your Card Number"
+                            required
+                        />
+                        <br /><br />
+                        <label>Expiry Date (required):</label> <br />
+                        <input
+                            class="text"
+                            type="text"
+                            id="expiry_month"
+                            name="expiry_month"
+                            placeholder="Month"
+                            style="width: 5%"
+                            required
+                        />
+                        <input
+                            class="text"
+                            type="text"
+                            id="expiry_year"
+                            name="expiry_year"
+                            placeholder="Year"
+                            style="width: 5%"
+                            required
+                        />
+                        <br /><br />
+                        <label for="name_as_on_card"
+                            >Name (as on card) (required):</label
+                        >
+                        <br />
+                        <input
+                            class="text"
+                            type="text"
+                            id="name_as_on_card"
+                            name="name_as_on_card"
+                            placeholder="Name"
+                            required
+                        />
+                        <br /><br />
+                    </fieldset>
+                    <br />
+                    <fieldset>
+                        <legend>Password</legend>
+                        <label for="password">Enter Password (required):</label>
+                        <br />
+                        <input
+                            class="text"
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter Password"
+                            required
+                        />
+                        <br /><br />
+                        <label for="confirm_password"
+                            >Confirm Password (required):</label
+                        >
+                        <br />
+                        <input
+                            class="text"
+                            type="password"
+                            id="confirm_password"
+                            name="confirm_password"
+                            placeholder="Confirm Password"
+                            required
+                        />
+                        <br /><br />
+                    </fieldset>
+                    <br /><br />
+                    <input
+                        class="button"
+                        type="submit"
+                        id="submit"
+                        value="Make Account"
+                        style="padding: 1%; align-self: center"
+                    />
+                </form>
+            </article>
+        </section>
+        <nav class="bottom">
+            <a class="navlink" href="#">Top</a> |
+            <a class="navlink" href="index.html">Home</a> |
+            <a class="navlink" href="about.html">About</a>
+        </nav>
+        <footer>
+            <a href="index.html"
+                ><img src="images/logo2.jpg" class="smallimage" /></a
+            ><br />
+            Made by Sam
+        </footer>
+    </body>
+    <script>
+        let firstName = document.getElementById('first_name');
+        let middleName = document.getElementById('middle_name');
+        let lastName = document.getElementById('last_name');
+        let nameAsOnCard = document.getElementById('name_as_on_card');
+        let countryCode = document.getElementById('country_code');
+        let phoneNo = document.getElementById('phone_no');
+        let contactNo = document.getElementById('contact_no');
 
-<body>
-    <header>
-        <h1>User Registration</h1>
-    </header>
-    <nav class="top">
-        <a class="navlink" href="index.php">Home</a> |
-        <a class="navlink" href="about.html">About</a> |
-        <a class="navlink" href="test.php"> test </a>
-    </nav>
-    <section>
-        <article class="full">
-            Welcome, thanks for starting your journey with
-            <span class="samazon">SamaZon</span>!!<br> Becoming a new user entitles you to unique perks.<br> Your soul will stand a chance at the trials after the ends just by registering as a user!<br>
-            <h2>Enter your details here:</h2>
-            <form action="registration.php" method="post">
-                <fieldset>
-                    <legend>
-                        Personal Details
-                    </legend>
-                    <label for="first_name">First Name (required):</label> <br>
-                    <input class="text" type="text" id="first_name" name="first_name" placeholder="Your first name" required> <br><br>
-                    <label for="middle_name">Middle Name:</label> <br>
-                    <input class="text" type="text" id="middle_name" name="middle_name" placeholder="Your middle name"> <br><br>
-                    <label for="last_name">Last Name (required):</label> <br>
-                    <input class="text" type="text" id="last_name" name="last_name" placeholder="Your last name" required>
-                    <br><br>
-                    <label for="date_of_birth">Date of Birth (required):</label> <br>
-                    <input class="text" type="date" id="date_of_birth" name="date_of_birth" required>
-                    <br><br>
-                    <label for="gender">Gender (required):</label>
-                    <br>
-                    <input type="radio" name="gender" value="M"> <span class="formtext">Male</span> <br>
-                    <input type="radio" name="gender" value="F"> <span class="formtext">Female</span> <br>
-                    <input type="radio" name="gender" value="X"> <span class="formtext">Other</span> <br><br>
-                    <label for="phone_no">Phone Number (required):</label> <br>
-                    <input class="text" type="number" id="country_code" name="country_code" placeholder="Code" required>
-                    <input class="text" type="number" id="phone_no" name="phone_no" placeholder="Phone Number" required> <br><br><br>
-                    <label for="email_id">Email ID (required):</label> <br>
-                    <input class="text" type="email" id="email_id" name="email_id" placeholder="Your Email ID" required>
-                </fieldset>
-                <br>
-                <fieldset>
-                    <legend>
-                        Address
-                    </legend>
-                    <label for="house">House (required):</label> <br>
-                    <input class="text" type="text" id="house" name="house" placeholder="Your house number" required> <br><br>
-                    <label for="street_name">Street Name:</label> <br>
-                    <input class="text" type="text" id="street_name" name="street_name" placeholder="Street Name"> <br><br>
-                    <label for="locality">Locality:</label> <br>
-                    <input class="text" type="text" id="locality" name="locality" placeholder="Your locality"> <br><br>
-                    <label for="city">City (required):</label> <br>
-                    <input class="text" type="text" id="city" name="city" placeholder="Your city" required> <br><br>
-                    <label for="state">State (required):</label> <br>
-                    <input class="text" type="text" id="state" name="state" placeholder="Your state" required> <br><br>
-                    <label for="pin_code">Pin Code (required):</label> <br>
-                    <input class="text" type="number" id="pin_code" name="pin_code" placeholder="Your Pin Code" required> <br><br>
-                    <label for="contact_no">Contact number (required):</label> <br>
-                    <input class="text" type="number" id="contact_no" name="contact_no" placeholder="Your Contact Number" required> <br><br>
-                </fieldset>
-                <br>
-                <fieldset>
-                    <legend>
-                        Card Details
-                    </legend>
-                    <label for="card_no">Card Number (required):</label> <br>
-                    <input class="text" type="text" id="card_no" name="card_no" placeholder="Your Card Number" required> <br><br>
-                    <label>Expiry Date (required):</label> <br>
-                    <input class="text" type="text" id="expiry_month" name="expiry_month" placeholder="Month" style="width: 5%;" required>
-                    <input class="text" type="text" id="expiry_year" name="expiry_year" placeholder="Year" style="width: 5%;" required> <br><br>
-                    <label for="name_as_on_card">Name (as on card) (required):</label> <br>
-                    <input class="text" type="text" id="name_as_on_card" name="name_as_on_card" placeholder="Name" required> <br><br>
-                </fieldset>
-                <br>
-                <fieldset>
-                    <legend>
-                        Password
-                    </legend>
-                    <label for="password">Enter Password (required):</label> <br>
-                    <input class="text" type="password" id="password" name="password" placeholder="Enter Password" required> <br><br>
-                    <label for="confirm_password">Confirm Password (required):</label> <br>
-                    <input class="text" type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required> <br><br>
-                </fieldset>
-                <br><br>
-                <input class="button" type="submit" id="submit" value="Make Account" style="
-                            padding: 1%;
-                            align-self: center;
-                        ">
-            </form>
-        </article>
-    </section>
-    <nav class="bottom">
-        <a class="navlink" href="#">Top</a> |
-        <a class="navlink" href="index.html">Home</a> |
-        <a class="navlink" href="about.html">About</a>
-    </nav>
-    <footer>
-        <a href="index.html"><img src="logo2.jpg" class="smallimage"></a><br> Made by Sam
-    </footer>
-</body>
-<script>
-    let firstName = document.getElementById("first_name");
-    let middleName = document.getElementById("middle_name");
-    let lastName = document.getElementById("last_name");
-    let nameAsOnCard = document.getElementById("name_as_on_card");
-    let countryCode = document.getElementById("country_code");
-    let phoneNo = document.getElementById("phone_no");
-    let contactNo = document.getElementById("contact_no");
+        function setNameAsOnCard() {
+            let name =
+                firstName.value + ' ' + middleName.value + ' ' + lastName.value;
+            nameAsOnCard.value = name;
+        }
 
-    function setNameAsOnCard() {
-        let name = firstName.value + " " + middleName.value + " " + lastName.value;
-        nameAsOnCard.value = name;
-    }
+        function setContactNo() {
+            let fullPhoneNumber = countryCode.value + phoneNo.value;
+            contactNo.value = fullPhoneNumber;
+        }
 
-    function setContactNo() {
-        let fullPhoneNumber = countryCode.value + phoneNo.value;
-        contactNo.value = fullPhoneNumber;
-    }
+        firstName.addEventListener('input', setNameAsOnCard);
+        middleName.addEventListener('input', setNameAsOnCard);
+        lastName.addEventListener('input', setNameAsOnCard);
 
-    firstName.addEventListener("input", setNameAsOnCard);
-    middleName.addEventListener("input", setNameAsOnCard);
-    lastName.addEventListener("input", setNameAsOnCard);
-
-    countryCode.addEventListener("input", setContactNo);
-    phoneNo.addEventListener("input", setContactNo);
-</script>
-
+        countryCode.addEventListener('input', setContactNo);
+        phoneNo.addEventListener('input', setContactNo);
+    </script>
 </html>

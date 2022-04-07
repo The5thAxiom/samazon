@@ -211,7 +211,7 @@
         </article>
     </section>
     <footer class="layout-box">
-        <a href="index.php"><img src="logo2.jpg" class="smallimage"></a><br> Made by Sam
+        <a href="index.php"><img src="images/logo2.jpg" class="smallimage"></a><br> Made by Sam
     </footer>
 </body>
 <script>
