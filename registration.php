@@ -10,37 +10,40 @@
     $con = mysqli_connect($server_name, $user_name, $user_password, $db_name);
 
     // PersonalDetails Table
-    $email_id = $_POST['email_id'];
-    $country_code = $_POST['country_code'];
-    $phone_no = $_POST['phone_no'];
-    $first_name = $_POST['first_name'];
-    $middle_name = $_POST['middle_name'];
+    $email_id = mysqli_real_escape_string($con, $_POST['email_id']);
+    $country_code = mysqli_real_escape_string($con, $_POST['country_code']);
+    $phone_no = mysqli_real_escape_string($con, $_POST['phone_no']);
+    $first_name = mysqli_real_escape_string($con, $_POST['first_name']);
+    $middle_name = mysqli_real_escape_string($con, $_POST['middle_name']);
     if ($middle_name == '') $middle_name = 'NULL';
-    $last_name = $_POST['last_name'];
-    $date_of_birth = $_POST['date_of_birth'];
-    $gender = $_POST['gender'];
-    $password = $_POST['password'];
+    else $middle_name = "'$middle_name'";
+    $last_name = mysqli_real_escape_string($con, $_POST['last_name']);
+    $date_of_birth = mysqli_real_escape_string($con, $_POST['date_of_birth']);
+    $gender = mysqli_real_escape_string($con, $_POST['gender']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
     
     //Address table
-    $house = $_POST['house'];
-    $street_name = $_POST['street_name'];
+    $house = mysqli_real_escape_string($con, $_POST['house']);
+    $street_name = mysqli_real_escape_string($con, $_POST['street_name']);
     if ($street_name == '') $street_name = 'NULL';
-    $locality = $_POST['locality'];
+    else $street_name == "'$street_name'";
+    $locality = mysqli_real_escape_string($con, $_POST['locality']);
     if ($locality == '') $locality = 'NULL';
-    $city = $_POST['city'];
-    $state = $_POST['state'];
-    $pin_code = $_POST['pin_code'];
-    $contact_no = $_POST['contact_no'];
+    else $locality == "'$locality'";
+    $city = mysqli_real_escape_string($con, $_POST['city']);
+    $state = mysqli_real_escape_string($con, $_POST['state']);
+    $pin_code = mysqli_real_escape_string($con, $_POST['pin_code']);
+    $contact_no = mysqli_real_escape_string($con, $_POST['contact_no']);
 
     // CardDetails
-    $card_no = $_POST['card_no'];
-    $expiry_month = $_POST['expiry_month'];
-    $expiry_year = $_POST['expiry_year'];
-    $name_as_on_card = $_POST['name_as_on_card'];
+    $card_no = mysqli_real_escape_string($con, $_POST['card_no']);
+    $expiry_month = mysqli_real_escape_string($con, $_POST['expiry_month']);
+    $expiry_year = mysqli_real_escape_string($con, $_POST['expiry_year']);
+    $name_as_on_card = mysqli_real_escape_string($con, $_POST['name_as_on_card']);
 
     $insert_personal = "
     INSERT 
-            INTO PersonalDetails (
+        INTO PersonalDetails (
             email_id,
             country_code,
             phone_no,
@@ -56,12 +59,13 @@
             $country_code,
             $phone_no,
             '$first_name',
-            '$middle_name',
+            $middle_name,
             '$last_name',
             '$date_of_birth',
             '$gender',
             '$password'
-        );";
+        );
+    ";
 
     $insert_address = "
     INSERT
@@ -78,13 +82,14 @@
         VALUES (
             '$email_id',
             '$house',
-            '$street_name',
-            '$locality',
+            $street_name,
+            $locality,
             '$city',
             '$state',
             $pin_code,
             $contact_no
-        );";
+        );
+    ";
 
     $insert_card = "
     INSERT
@@ -101,7 +106,8 @@
             $expiry_month,
             $expiry_year,
             '$name_as_on_card'
-        );";
+        );
+    ";
 
     $insert_personal_result = mysqli_query($con, $insert_personal);
     $insert_address_result = mysqli_query($con, $insert_address);
