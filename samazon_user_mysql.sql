@@ -49,13 +49,13 @@ INSERT
         password
     )
     VALUES (
-        'samridhanand.paatni2020@vitstudent.ac.in',
+        'samridh.anand.paatni@gmail.com',
         91,
-        8077339033,
+        9876543215,
         'Samridh',
         'Anand',
         'Paatni',
-        '2002-04-10',
+        '2002-01-01',
         'M',
         'hello'
     );
@@ -72,13 +72,13 @@ INSERT
         contact_no
     )
     VALUES (
-        'samridhanand.paatni2020@vitstudent.ac.in',
-        'A-54',
+        'samridh.anand.paatni@gmail.com',
+        '421',
         NULL,
-        'Omaxe City',
+        'Dummy nagar',
         'Lucknow',
         'Uttar Pradesh',
-        226025,
+        221414,
         8077339033
     );
 
@@ -91,7 +91,7 @@ INSERT
         name_as_on_card
     )
     VALUES (
-        'samridhanand.paatni2020@vitstudent.ac.in',
+        'samridh.anand.paatni@gmail.com',
         1234123412341234,
         01,
         12,
