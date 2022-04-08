@@ -79,7 +79,7 @@
                             echo '<tr>';
                             for ($i = 0; $i < sizeof($row); $i++) { /* for each element in row */
                                 $attribute = $row[$i];
-                                if ($attribute == "NULL") {$attribute = $nullString;}
+                                if ($attribute == "") {$attribute = $nullString;}
                                 echo "<td>$attribute</td>";
                             }
                             echo '</tr>';
@@ -126,7 +126,7 @@
                             echo '<tr>';
                             for ($i = 0; $i < sizeof($row); $i++) {
                                 $attribute = $row[$i];
-                                if ($attribute == "NULL") {$attribute = $nullString;}
+                                if ($attribute == "") {$attribute = $nullString;}
                                 echo "<td>$attribute</td>";
                             }
                             echo '</tr>';
@@ -166,7 +166,7 @@
                             echo '<tr>';
                             for ($i = 0; $i < sizeof($row); $i++) {
                                 $attribute = $row[$i];
-                                if ($attribute == "NULL") {$attribute = $nullString;}
+                                if ($attribute == "") {$attribute = $nullString;}
                                 echo "<td>$attribute</td>";
                             }
                             echo '</tr>';
@@ -201,7 +201,7 @@
                             echo '<tr>';
                             for ($i = 0; $i < sizeof($row); $i++) {
                                 $attribute = $row[$i];
-                                if ($attribute == "NULL") {$attribute = $nullString;}
+                                if ($attribute == "") {$attribute = $nullString;}
                                 echo "<td>$attribute</td>";
                             }
                             echo '</tr>';
