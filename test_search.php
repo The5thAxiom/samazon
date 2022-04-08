@@ -2,17 +2,25 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
     <link rel="stylesheet" href="samazon.css">
-    <title>hola amigo</title>
+    <title>DB Testing | Searching</title>
 </head>
 <?php
-        $server_name = 'sql6.freemysqlhosting.net';
-        $user_name = 'sql6484450';
-        $user_password = '76FIzvkBGF';
-        $db_name = 'sql6484450';
-        $con = mysqli_connect($server_name, $user_name, $user_password, $db_name);
-        $nullString = '-';
+    $server_name = 'sql6.freemysqlhosting.net';
+    $user_name = 'sql6484450';
+    $user_password = '76FIzvkBGF';
+    $db_name = 'sql6484450';
+    $con = mysqli_connect(
+        $server_name,
+        $user_name,
+        $user_password,
+        $db_name
+    );
+    $nullString = '-';
 ?>
 <body>
     <header class="layout-box">
@@ -22,8 +30,8 @@
         Testing PHP, and a bit of JS
     </header>
     <nav class="top layout-box">
-        <a class="navlink" href="index.php"> Home </a> |
-        <a class="navlink" href="Register.html">Register</a>
+        <a href="index.php" class="navlink"> Home </a> <!-- |
+        <a href="Register.html" class="navlink"> Register </a> -->
     </nav>
     <section>
         <article class = "full layout-box">
@@ -32,11 +40,10 @@
                 <input name = "search-keyword" class = "text" type="search" placeholder="Search for a name">
                 <button class = "button" name = "submit" type="submit"> Search </button>
             </form>
-            <br>
+            <br />
             <?php
                 if (isset($_GET['submit'])) { /* If the submit button was clicked */
-                    $keyword = $_GET['search-keyword'];
-                    $keyword = mysqli_real_escape_string($con, "$keyword");
+                    $keyword = mysqli_real_escape_string($con, $_GET['search-keyword']);
                     /* The query to get Personal details from the search term */
                     $sql = "
                         SELECT
@@ -56,7 +63,11 @@
                             OR last_name = '$keyword';
                     ";
                     $result = mysqli_query($con, $sql);
-                    if (!$result || mysqli_num_rows($result) == 0 || $keyword == 'NULL') { /* If the query returns nothing*/
+                    if (
+                        !$result || // query failed
+                        mysqli_num_rows($result) == 0 || // now rows found
+                        $keyword == 'NULL' // nothing was searched
+                    ) {
                         echo "<br>Nothing found";
                     } else { /* Displaying whatever was returned as a table */
                         echo mysqli_num_rows($result);
@@ -104,34 +115,34 @@
                     <th>Country Code</th>
                     <th>Phone Number</th>
                 </tr>
-                    <?php
-                        $sql = "
-                            SELECT
-                                email_id,
-                                first_name,
-                                middle_name,
-                                last_name,
-                                gender,
-                                date_of_birth,
-                                country_code,
-                                phone_no
-                            FROM
-                                PersonalDetails
-                            ORDER BY
-                                email_id;
-                        ";
-                        $result = mysqli_query($con, $sql);
-                        for ($j = 0; $j < mysqli_num_rows($result); $j++) {
-                            $row = mysqli_fetch_row($result);
-                            echo '<tr>';
-                            for ($i = 0; $i < sizeof($row); $i++) {
-                                $attribute = $row[$i];
-                                if ($attribute == "") {$attribute = $nullString;}
-                                echo "<td>$attribute</td>";
-                            }
-                            echo '</tr>';
+                <?php
+                    $sql = "
+                        SELECT
+                            email_id,
+                            first_name,
+                            middle_name,
+                            last_name,
+                            gender,
+                            date_of_birth,
+                            country_code,
+                            phone_no
+                        FROM
+                            PersonalDetails
+                        ORDER BY
+                            email_id;
+                    ";
+                    $result = mysqli_query($con, $sql);
+                    for ($j = 0; $j < mysqli_num_rows($result); $j++) {
+                        $row = mysqli_fetch_row($result);
+                        echo '<tr>';
+                        for ($i = 0; $i < sizeof($row); $i++) {
+                            $attribute = $row[$i];
+                            if ($attribute == "") {$attribute = $nullString;}
+                            echo "<td>$attribute</td>";
                         }
-                    ?>
+                        echo '</tr>';
+                    }
+                ?>
             </table>
             <h2>Addresses</h2>
             <table>
@@ -144,34 +155,35 @@
                     <th>State</th>
                     <th>Pin Code</th>
                     <th>Contact Number</th>
-                    <?php
-                        $sql = "
-                            SELECT
-                                email_id,
-                                house,
-                                street_name,
-                                locality,
-                                city,
-                                state,
-                                pin_code,
-                                contact_no
-                            FROM
-                                Address
-                            ORDER BY
-                                email_id;
-                        ";
-                        $result = mysqli_query($con, $sql);
-                        for ($j = 0; $j < mysqli_num_rows($result); $j++) {
-                            $row = mysqli_fetch_row($result);
-                            echo '<tr>';
-                            for ($i = 0; $i < sizeof($row); $i++) {
-                                $attribute = $row[$i];
-                                if ($attribute == "") {$attribute = $nullString;}
-                                echo "<td>$attribute</td>";
-                            }
-                            echo '</tr>';
+                </tr>
+                <?php
+                    $sql = "
+                        SELECT
+                            email_id,
+                            house,
+                            street_name,
+                            locality,
+                            city,
+                            state,
+                            pin_code,
+                            contact_no
+                        FROM
+                            Address
+                        ORDER BY
+                            email_id;
+                    ";
+                    $result = mysqli_query($con, $sql);
+                    for ($j = 0; $j < mysqli_num_rows($result); $j++) {
+                        $row = mysqli_fetch_row($result);
+                        echo '<tr>';
+                        for ($i = 0; $i < sizeof($row); $i++) {
+                            $attribute = $row[$i];
+                            if ($attribute == "") {$attribute = $nullString;}
+                            echo "<td>$attribute</td>";
                         }
-                    ?>
+                        echo '</tr>';
+                    }
+                ?>
             </table>
             <h2>Card Details</h2>
             <table>
@@ -182,31 +194,31 @@
                     <th>Year of Expiry</th>
                     <th>Name (as on card)</th>
                 </tr>
-                    <?php
-                        $sql = "
-                            SELECT
-                                email_id,
-                                card_no,
-                                expiry_month,
-                                expiry_year,
-                                name_as_on_card
-                            FROM
-                                CardDetails
-                            ORDER BY
-                                email_id;
-                        ";
-                        $result = mysqli_query($con, $sql);
-                        for ($j = 0; $j < mysqli_num_rows($result); $j++) {
-                            $row = mysqli_fetch_row($result);
-                            echo '<tr>';
-                            for ($i = 0; $i < sizeof($row); $i++) {
-                                $attribute = $row[$i];
-                                if ($attribute == "") {$attribute = $nullString;}
-                                echo "<td>$attribute</td>";
-                            }
-                            echo '</tr>';
+                <?php
+                    $sql = "
+                        SELECT
+                            email_id,
+                            card_no,
+                            expiry_month,
+                            expiry_year,
+                            name_as_on_card
+                        FROM
+                            CardDetails
+                        ORDER BY
+                            email_id;
+                    ";
+                    $result = mysqli_query($con, $sql);
+                    for ($j = 0; $j < mysqli_num_rows($result); $j++) {
+                        $row = mysqli_fetch_row($result);
+                        echo '<tr>';
+                        for ($i = 0; $i < sizeof($row); $i++) {
+                            $attribute = $row[$i];
+                            if ($attribute == "") {$attribute = $nullString;}
+                            echo "<td>$attribute</td>";
                         }
-                    ?>
+                        echo '</tr>';
+                    }
+                ?>
             </table>
         </article>
     </section>

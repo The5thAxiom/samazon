@@ -15,7 +15,7 @@
             <a class = "navlink" href = "Register.html">Register</a> |
             <a class = "navlink" href = "login.php">Login</a> |
             <a class = "navlink" href = "about.html">About</a>
-            | <a href = "test.php">test</a>
+            | <a href = "test_search.php">test</a>
         </nav>
         <section>
             <article class = "full">

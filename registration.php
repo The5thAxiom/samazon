@@ -9,14 +9,17 @@
     $db_name = 'sql6484450';
     $con = mysqli_connect($server_name, $user_name, $user_password, $db_name);
 
+    function handleNull(string $str): string {
+        if ($str == '') return 'NULL';
+        else return "'$str'";
+    }
+
     // PersonalDetails Table
     $email_id = mysqli_real_escape_string($con, $_POST['email_id']);
     $country_code = mysqli_real_escape_string($con, $_POST['country_code']);
     $phone_no = mysqli_real_escape_string($con, $_POST['phone_no']);
     $first_name = mysqli_real_escape_string($con, $_POST['first_name']);
-    $middle_name = mysqli_real_escape_string($con, $_POST['middle_name']);
-    if ($middle_name == '') $middle_name = 'NULL';
-    else $middle_name = "'$middle_name'";
+    $middle_name = handleNull(mysqli_real_escape_string($con, $_POST['middle_name']));
     $last_name = mysqli_real_escape_string($con, $_POST['last_name']);
     $date_of_birth = mysqli_real_escape_string($con, $_POST['date_of_birth']);
     $gender = mysqli_real_escape_string($con, $_POST['gender']);
@@ -24,12 +27,8 @@
     
     //Address table
     $house = mysqli_real_escape_string($con, $_POST['house']);
-    $street_name = mysqli_real_escape_string($con, $_POST['street_name']);
-    if ($street_name == '') $street_name = 'NULL';
-    else $street_name == "'$street_name'";
-    $locality = mysqli_real_escape_string($con, $_POST['locality']);
-    if ($locality == '') $locality = 'NULL';
-    else $locality == "'$locality'";
+    $street_name = handleNull(mysqli_real_escape_string($con, $_POST['street_name']));
+    $locality = handleNull(mysqli_real_escape_string($con, $_POST['locality']));
     $city = mysqli_real_escape_string($con, $_POST['city']);
     $state = mysqli_real_escape_string($con, $_POST['state']);
     $pin_code = mysqli_real_escape_string($con, $_POST['pin_code']);
@@ -115,9 +114,9 @@
 
     if ($insert_personal_result && $insert_card_result && $insert_address_result){
         //echo readfile('customer.html');
-        //echo readfile('test.php');
-        //echo '<a href = "test.php">go</a>';
-        header("Location: test.php");
+        //echo readfile('test_search.php');
+        //echo '<a href = "test_search.php">go</a>';
+        header("Location: test_search.php");
     } else {
         echo mysqli_error($con);
         echo '<br><a href = "Register.html">back</a>';
