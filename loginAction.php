@@ -1,29 +1,30 @@
 <?php
-    /*
-    The php for entering the registration form into the 
-    samazon_users mysql db
-    */
-    $server_name = 'sql6.freemysqlhosting.net';
-    $user_name = 'sql6484450';
-    $user_password = '76FIzvkBGF';
-    $db_name = 'sql6484450';
-    $con = mysqli_connect($server_name, $user_name, $user_password, $db_name);
+    require './db.php';
 
     // if (!$con) {
     //     die('Database Connection Error<br>'.mysqli_error());
     // }
 
-    $email_id = $_POST['email_id'];
-    $password = $_POST['password'];
+    $email_id = mysqli_real_escape_string($con, $_POST['email_id']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
 
-    $sql = "SELECT password FROM PersonalDetails WHERE PersonalDetails.email_id = '$email_id';";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_array($result);
+    $actualPassword = mysqli_fetch_array(
+        mysqli_query(
+            $con,
+            "
+                SELECT
+                    password
+                FROM
+                    PersonalDetails
+                WHERE
+                    PersonalDetails.email_id = '$email_id'
+                ;
+            "
+        )
+    )[0];
 
-    if ($row[0] == $password){
-        echo readfile('customer.html');
-    } else {
-        echo 'Wrong Password';
-    }
+    if ($actualPassword == $password) echo readfile('customer.html');
+    else echo 'Wrong Password';
 
+    mysqli_close($con);
 ?>

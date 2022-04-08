@@ -1,13 +1,5 @@
 <?php
-    /*
-    The php for entering the registration form into the 
-    samazon_users mysql db
-    */
-    $server_name = 'sql6.freemysqlhosting.net';
-    $user_name = 'sql6484450';
-    $user_password = '76FIzvkBGF';
-    $db_name = 'sql6484450';
-    $con = mysqli_connect($server_name, $user_name, $user_password, $db_name);
+    require './db.php';
 
     function handleNull(string $str): string {
         if ($str == '') return 'NULL';
@@ -108,18 +100,14 @@
         );
     ";
 
-    $insert_personal_result = mysqli_query($con, $insert_personal);
-    $insert_address_result = mysqli_query($con, $insert_address);
-    $insert_card_result = mysqli_query($con, $insert_card);
-
-    if ($insert_personal_result && $insert_card_result && $insert_address_result){
-        //echo readfile('customer.html');
-        //echo readfile('test_search.php');
-        //echo '<a href = "test_search.php">go</a>';
-        header("Location: test_search.php");
-    } else {
+    if (
+        mysqli_query($con, $insert_personal) &&
+        mysqli_query($con, $insert_address) &&
+        mysqli_query($con, $insert_card)
+    ) header("Location: testing/");
+    else {
         echo mysqli_error($con);
         echo '<br><a href = "Register.html">back</a>';
     }
-
+    mysqli_close($con);
 ?>

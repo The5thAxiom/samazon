@@ -15,9 +15,9 @@
             <a class = "navlink" href = "Register.html">Register</a> |
             <a class = "navlink" href = "login.php">Login</a> |
             <a class = "navlink" href = "about.html">About</a>
-            | <a href = "test_search.php">test</a>
+            | <a href = "testing/">test</a>
         </nav>
-        <section>
+        <main>
             <article class = "full">
                 <div class = "slogan">
                     <span class = "samazon">SamaZon</span> is an upcoming e-commerce site!!
@@ -33,7 +33,7 @@
                     life you want!
                 </div>
             </article>
-        </section>
+        </main>
         <nav class = "bottom">
             <a class = "navlink" href = "#">Top</a> |
             <a class = "navlink" href = "Register.html">Register</a> |

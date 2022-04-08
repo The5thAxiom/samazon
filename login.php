@@ -15,7 +15,7 @@
             <a class="navlink" href="index.php">Home</a> |
             <a class="navlink" href="about.html">About</a>
         </nav>
-        <section>
+        <main>
             <article class="full">
                 <a href="customer.html">Go</a><br />
                 <form action="loginAction.php" method="POST">
@@ -40,7 +40,7 @@
                     <input type="submit" class="button" />
                 </form>
             </article>
-        </section>
+        </main>
 
         <nav class="bottom">
             <a class="navlink" href="#">Top</a> |

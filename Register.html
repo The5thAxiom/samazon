@@ -14,9 +14,9 @@
         <nav class="top">
             <a class="navlink" href="index.php">Home</a> |
             <a class="navlink" href="about.html">About</a> |
-            <a class="navlink" href="test_search.php"> test </a>
+            <a class="navlink" href="testing/"> test </a>
         </nav>
-        <section>
+        <main>
             <article class="full">
                 Welcome, thanks for starting your journey with
                 <span class="samazon">SamaZon</span>!!<br />
@@ -25,7 +25,7 @@
                 by registering as a user!<br />
                 <h2>Enter your details here:</h2>
                 <form action="registration.php" method="post">
-                    <fieldset>
+                    <fieldset id="personal-details">
                         <legend>Personal Details</legend>
                         <label for="first_name">First Name (required):</label>
                         <br />
@@ -109,7 +109,7 @@
                         />
                     </fieldset>
                     <br />
-                    <fieldset>
+                    <fieldset id="address">
                         <legend>Address</legend>
                         <label for="house">House (required):</label> <br />
                         <input
@@ -185,7 +185,7 @@
                         <br /><br />
                     </fieldset>
                     <br />
-                    <fieldset>
+                    <fieldset id="card-details">
                         <legend>Card Details</legend>
                         <label for="card_no">Card Number (required):</label>
                         <br />
@@ -233,9 +233,11 @@
                         <br /><br />
                     </fieldset>
                     <br />
-                    <fieldset>
+                    <fieldset id="password">
                         <legend>Password</legend>
-                        <label for="password">Enter Password (required):</label>
+                        <label for="password">
+                            Enter Password (required):
+                        </label>
                         <br />
                         <input
                             class="text"
@@ -270,44 +272,41 @@
                     />
                 </form>
             </article>
-        </section>
+        </main>
         <nav class="bottom">
             <a class="navlink" href="#">Top</a> |
             <a class="navlink" href="index.html">Home</a> |
             <a class="navlink" href="about.html">About</a>
         </nav>
         <footer>
-            <a href="index.html"
-                ><img src="images/logo2.jpg" class="smallimage" /></a
-            ><br />
+            <a href="index.html">
+                <img src="images/logo2.jpg" class="smallimage" />
+            </a>
+            <br />
             Made by Sam
         </footer>
     </body>
     <script>
-        let firstName = document.getElementById('first_name');
-        let middleName = document.getElementById('middle_name');
-        let lastName = document.getElementById('last_name');
-        let nameAsOnCard = document.getElementById('name_as_on_card');
-        let countryCode = document.getElementById('country_code');
-        let phoneNo = document.getElementById('phone_no');
-        let contactNo = document.getElementById('contact_no');
+        const firstName = document.getElementById('first_name');
+        const middleName = document.getElementById('middle_name');
+        const lastName = document.getElementById('last_name');
+        const nameAsOnCard = document.getElementById('name_as_on_card');
+        const countryCode = document.getElementById('country_code');
+        const phoneNo = document.getElementById('phone_no');
+        const contactNo = document.getElementById('contact_no');
 
-        function setNameAsOnCard() {
-            let name =
-                firstName.value + ' ' + middleName.value + ' ' + lastName.value;
-            nameAsOnCard.value = name;
-        }
+        [firstName, middleName, lastName].forEach(nameField => {
+            nameField.addEventListener('input', () => {
+                nameAsOnCard.value = `${firstName.value} ${
+                    middleName.value === '' ? '' : middleName.value + ' '
+                } ${lastName.value}`;
+            });
+        });
 
-        function setContactNo() {
-            let fullPhoneNumber = countryCode.value + phoneNo.value;
-            contactNo.value = fullPhoneNumber;
-        }
-
-        firstName.addEventListener('input', setNameAsOnCard);
-        middleName.addEventListener('input', setNameAsOnCard);
-        lastName.addEventListener('input', setNameAsOnCard);
-
-        countryCode.addEventListener('input', setContactNo);
-        phoneNo.addEventListener('input', setContactNo);
+        [countryCode, phoneNo].forEach(phoneField => {
+            phoneField.addEventListener('input', () => {
+                contactNo.value = countryCode.value + phoneNo.value;
+            });
+        });
     </script>
 </html>

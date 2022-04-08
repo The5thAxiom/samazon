@@ -187,7 +187,7 @@ nav.bottom {
     margin-bottom: 2%;
 }
 
-section {
+main {
     display: flex;
     flex-wrap: wrap;
 }
