@@ -13,7 +13,7 @@
         </header>
         <nav class = "top">
             <a class = "navlink" href = "Register.html">Register</a> |
-            <a class = "navlink" href = "login.html">Login</a> |
+            <a class = "navlink" href = "login.php">Login</a> |
             <a class = "navlink" href = "about.html">About</a>
             | <a href = "test.php">test</a>
         </nav>
@@ -37,13 +37,10 @@
         <nav class = "bottom">
             <a class = "navlink" href = "#">Top</a> |
             <a class = "navlink" href = "Register.html">Register</a> |
-            <a class = "navlink" href = login.html">Login</a> |
+            <a class = "navlink" href = login.php">Login</a> |
             <a class = "navlink" href = "about.html">About</a>
             
         </nav>
-        <footer>
-            <a href = "index.html"><img src="images/logo2.jpg" class = "smallimage"></a><br>
-            Made by Sam
-        </footer>
+        <?php include('footer.php'); ?>
     </body>
 </html>
