@@ -56,7 +56,7 @@
                             OR last_name = '$keyword';
                     ";
                     $result = mysqli_query($con, $sql);
-                    if (mysqli_num_rows($result) == 0 || $keyword == 'NULL') { /* If the query returns nothing*/
+                    if (!$result || mysqli_num_rows($result) == 0 || $keyword == 'NULL') { /* If the query returns nothing*/
                         echo "<br>Nothing found";
                     } else { /* Displaying whatever was returned as a table */
                         echo mysqli_num_rows($result);

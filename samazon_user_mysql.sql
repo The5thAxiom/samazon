@@ -36,6 +36,35 @@ CREATE TABLE CardDetails(
     PRIMARY KEY (serial_no)
 );
 
+CREATE VIEW AllData AS
+    SELECT
+        PersonalDetails.email_id,
+        PersonalDetails.country_code,
+        PersonalDetails.phone_no,
+        PersonalDetails.first_name,
+        PersonalDetails.middle_name,
+        PersonalDetails.last_name,
+        PersonalDetails.date_of_birth,
+        PersonalDetails.gender,
+        PersonalDetails.password,
+        
+        Address.house,
+        Address.street_name,
+        Address.locality,
+        Address.city,
+        Address.state,
+        Address.pin_code,
+        Address.contact_no,
+        
+        CardDetails.card_no,
+        CardDetails.expiry_month,
+        CardDetails.expiry_year,
+        CardDetails.name_as_on_card
+    FROM
+        PersonalDetails 
+        JOIN Address USING (email_id)
+        JOIN CardDetails USING (email_id)
+
 INSERT 
     INTO PersonalDetails (
         email_id,
@@ -79,7 +108,7 @@ INSERT
         'Lucknow',
         'Uttar Pradesh',
         221414,
-        8077339033
+        9876543215
     );
 
 INSERT
