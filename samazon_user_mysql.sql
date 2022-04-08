@@ -23,7 +23,7 @@ CREATE TABLE Address(
     contact_no bigint(12) NOT NULL,
     FOREIGN KEY (email_id) REFERENCES PersonalDetails(email_id) ON DELETE CASCADE,
     PRIMARY KEY (serial_no)
-    );
+);
 
 CREATE TABLE CardDetails(
     serial_no bigint(16) NOT NULL AUTO_INCREMENT,
@@ -37,7 +37,7 @@ CREATE TABLE CardDetails(
 );
 
 INSERT 
-        INTO PersonalDetails (
+    INTO PersonalDetails (
         email_id,
         country_code,
         phone_no,

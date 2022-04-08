@@ -8,7 +8,7 @@
     </head>
     <body>
         <header id = "header" style = "margin-bottom: 0%">
-            <img src="images/logo.jpg" class = "fullimage" >
+            <img src="images/logo.jpg" class = "fullimage" />
             <h3 class = "slogan"><span class = "samazon">A new way of shopping!</span></h3>
         </header>
         <nav class = "top">
