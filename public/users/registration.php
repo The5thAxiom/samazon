@@ -1,5 +1,5 @@
 <?php
-    require './db.php';
+    require './static/db.php';
 
     function handleNull(string $str): string {
         if ($str == '') return 'NULL';
@@ -107,7 +107,7 @@
     ) header("Location: testing/");
     else {
         echo mysqli_error($con);
-        echo '<br><a href = "Register.html">back</a>';
+        echo '<br><a href = "register.php">back</a>';
     }
     mysqli_close($con);
 ?>

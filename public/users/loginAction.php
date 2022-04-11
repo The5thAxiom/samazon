@@ -1,5 +1,5 @@
 <?php
-    require './db.php';
+    require './static/db.php';
 
     // if (!$con) {
     //     die('Database Connection Error<br>'.mysqli_error());
