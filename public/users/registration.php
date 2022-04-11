@@ -50,6 +50,18 @@
             $user_is_buyer
         );
     ";
+
+    $insert_seller = "";
+    $insert_buyer = "";
+
+    if ($user_is_buyer === 'true') {
+        $insert_buyer = "INSERT INTO Buyers (email_id) VALUES ('$email_id')";
+    }
+
+    if ($user_is_seller === 'true') {
+        $insert_seller = "INSERT INTO Buyers (email_id) VALUES ('$email_id')";
+    }
+
     $insert_personal = "
     INSERT 
         INTO PersonalDetails (
@@ -118,6 +130,8 @@
 
     if (
         mysqli_query($con, $insert_account) &&
+        ($user_is_buyer == 'false' || mysqli_query($con, $insert_buyer)) &&
+        ($user_is_seller == 'false' || mysqli_query($con, $insert_seller)) &&
         mysqli_query($con, $insert_personal) &&
         mysqli_query($con, $insert_address) &&
         mysqli_query($con, $insert_card)
