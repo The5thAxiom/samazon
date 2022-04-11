@@ -95,6 +95,20 @@
                 placeholder="Your Email ID"
                 required
             />
+            <br /><br />
+            <label for="seller">Are you planning to be a seller?</label>
+            <br />
+            <input type="radio" name="seller" value="Y" />
+            <span class="formtext">Yes</span> <br />
+            <input type="radio" name="seller" value="N" />
+            <span class="formtext">No</span>
+            <br /><br />
+            <label for="buyer">Are you planning to be a buyer?</label>
+            <br />
+            <input type="radio" name="buyer" value="Y" />
+            <span class="formtext">Yes</span> <br />
+            <input type="radio" name="buyer" value="N" />
+            <span class="formtext">No</span><br /><br />
         </fieldset>
         <br />
         <fieldset id="address">

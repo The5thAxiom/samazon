@@ -1,13 +1,18 @@
 <?php
-    require './static/db.php';
+    require '../static/db.php';
 
     function handleNull(string $str): string {
         if ($str == '') return 'NULL';
         else return "'$str'";
     }
 
-    // PersonalDetails Table
+    // Accounts
     $email_id = mysqli_real_escape_string($con, $_POST['email_id']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+    $user_is_seller = $_POST['seller'] == 'Y' ? 'true' : 'false';
+    $user_is_buyer = $_POST['buyer'] == 'Y' ? 'true' : 'false';
+
+    // PersonalDetails Table
     $country_code = mysqli_real_escape_string($con, $_POST['country_code']);
     $phone_no = mysqli_real_escape_string($con, $_POST['phone_no']);
     $first_name = mysqli_real_escape_string($con, $_POST['first_name']);
@@ -15,7 +20,6 @@
     $last_name = mysqli_real_escape_string($con, $_POST['last_name']);
     $date_of_birth = mysqli_real_escape_string($con, $_POST['date_of_birth']);
     $gender = mysqli_real_escape_string($con, $_POST['gender']);
-    $password = mysqli_real_escape_string($con, $_POST['password']);
     
     //Address table
     $house = mysqli_real_escape_string($con, $_POST['house']);
@@ -32,6 +36,20 @@
     $expiry_year = mysqli_real_escape_string($con, $_POST['expiry_year']);
     $name_as_on_card = mysqli_real_escape_string($con, $_POST['name_as_on_card']);
 
+    $insert_account = "
+    INSERT
+        INTO Accounts (
+            email_id,
+            password,
+            user_is_seller,
+            user_is_buyer
+        ) VALUES (
+            '$email_id',
+            '$password',
+            $user_is_seller,
+            $user_is_buyer
+        );
+    ";
     $insert_personal = "
     INSERT 
         INTO PersonalDetails (
@@ -42,8 +60,7 @@
             middle_name,
             last_name,
             date_of_birth,
-            gender,
-            password
+            gender
         )
         VALUES (
             '$email_id',
@@ -53,8 +70,7 @@
             $middle_name,
             '$last_name',
             '$date_of_birth',
-            '$gender',
-            '$password'
+            '$gender'
         );
     ";
 
@@ -101,10 +117,11 @@
     ";
 
     if (
+        mysqli_query($con, $insert_account) &&
         mysqli_query($con, $insert_personal) &&
         mysqli_query($con, $insert_address) &&
         mysqli_query($con, $insert_card)
-    ) header("Location: testing/");
+    ) header("Location: ../testing/index.php");
     else {
         echo mysqli_error($con);
         echo '<br><a href = "register.php">back</a>';
