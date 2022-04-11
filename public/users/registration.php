@@ -1,5 +1,5 @@
 <?php
-    require '../static/db.php';
+    require '../values/database_credentials.php';
 
     function handleNull(string $str): string {
         if ($str == '') return 'NULL';
@@ -59,7 +59,7 @@
     }
 
     if ($user_is_seller === 'true') {
-        $insert_seller = "INSERT INTO Buyers (email_id) VALUES ('$email_id')";
+        $insert_seller = "INSERT INTO Sellers (email_id) VALUES ('$email_id')";
     }
 
     $insert_personal = "

@@ -3,7 +3,7 @@
     $heading = 'New User Registration';
     $path_to_public = '../';
     $links = [];
-    require '../static/top.php';
+    require '../templates/top.php';
 ?>
 <article class="full">
     Welcome, thanks for starting your journey with
@@ -275,7 +275,7 @@
     </form>
 </article>
 
-<?php require '../static/bottom.php'; ?>
+<?php require '../templates/bottom.php'; ?>
 
 <script>
     const firstName = document.getElementById('first_name');

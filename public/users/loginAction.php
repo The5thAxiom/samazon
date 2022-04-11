@@ -1,5 +1,5 @@
 <?php
-    require './static/db.php';
+    require '../values/database_credentials.php';
 
     // if (!$con) {
     //     die('Database Connection Error<br>'.mysqli_error());
@@ -23,7 +23,7 @@
         )
     )[0];
 
-    if ($actualPassword == $password) echo readfile('customer.html');
+    if ($actualPassword == $password) echo readfile('customer.php');
     else echo 'Wrong Password';
 
     mysqli_close($con);

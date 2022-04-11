@@ -7,7 +7,7 @@
         ['title' => 'Login', 'href' => 'login.php'],
         ['title' => 'Register', 'href' => 'register.php']
     ];
-    require 'static/top.php';
+    require 'templates/top.php';
 ?>
 
 <article class="full">
@@ -46,5 +46,5 @@
 </article>
 
 <?php
-    require 'static/bottom.php';
+    require 'templates/bottom.php';
 ?>

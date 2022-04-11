@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="static/samazon.css" />
-        <title>SamaZon | Name</title>
-    </head>
-
-    <body>
-        <header class="small">
-            <h1>SamaZon</h1>
-        </header>
+<?php
+    $title = 'login'
+?>
         <nav class="top">
             <a class="navlink" href="#">Profile</a> |
             <a class="navlink" href="#">Cart</a> |

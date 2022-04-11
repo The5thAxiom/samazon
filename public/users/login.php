@@ -6,11 +6,11 @@
         ['title' => 'Home', 'href' => 'index.php'],
         ['title' => 'About', 'href' => 'about.php']
     ];
-    require '../static/top.php';
+    require '../templates/top.php';
 ?>
 
 <article class="full">
-    <a href="customer.html">Go</a><br />
+    <a href="customer.php">Go</a><br />
     <form action="loginAction.php" method="POST">
         <label for="email_id"> Email Id: </label> <br />
         <input
@@ -34,4 +34,4 @@
     </form>
 </article>
 
-<?php require '../static/bottom.php'; ?>
+<?php require '../templates/bottom.php'; ?>

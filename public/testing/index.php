@@ -1,11 +1,11 @@
 <?php
-    require '../static/db.php';
+    require '../values/database_credentials.php';
     require 'printTable.php';
     $heading = 'Testing';
     $title = 'testing';
     $links = [];
     $path_to_public = '../';
-    require '../static/top.php';
+    require '../templates/top.php';
 ?>
 <article class="full layout-box">
     <span style="padding-left: 0px;" class="slogan slogan-heading" id="jsdata"></span>
@@ -233,4 +233,4 @@
         ?>
     </table>
 </article>
-<?php require '../static/bottom.php'; ?>
+<?php require '../templates/bottom.php'; ?>
