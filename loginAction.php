@@ -15,9 +15,9 @@
                 SELECT
                     password
                 FROM
-                    PersonalDetails
+                    Accounts
                 WHERE
-                    PersonalDetails.email_id = '$email_id'
+                    Accounts.email_id = '$email_id'
                 ;
             "
         )

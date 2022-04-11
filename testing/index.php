@@ -20,9 +20,9 @@
         </span> <br>
         Testing PHP, and a bit of JS
     </header>
-    <nav class="top layout-box">
+    <!-- <nav class="top layout-box">
         <a href="./search.php" class="navlink"> search-users-tables </a>
-    </nav>
+    </nav> -->
     <main>
         <article class="full layout-box">
             <span style="padding-left: 0px;" class="slogan slogan-heading" id="jsdata"></span>
@@ -52,8 +52,7 @@
                                 phone_no
                             FROM
                                 PersonalDetails
-                            ORDER BY
-                                email_id;
+                            ORDER BY id;
                         "
                     ));
                 ?>
@@ -84,8 +83,7 @@
                                 contact_no
                             FROM
                                 Address
-                            ORDER BY
-                                email_id;
+                            ORDER BY id;
                         "
                     ));
                 ?>
@@ -110,8 +108,143 @@
                                 name_as_on_card
                             FROM
                                 CardDetails
-                            ORDER BY
-                                email_id;
+                            ORDER BY id;
+                        "
+                    ));
+                ?>
+            </table>
+            <h2>Bank Details</h2>
+            <table>
+                <tr>
+                    <th>Email ID</th>
+                    <th>Full Name</th>
+                    <th>City</th>
+                    <th>Bank Name</th>
+                    <th>Branch Name</th>
+                    <th>IFSC Code</th>
+                    <th>Account Number</th>
+                </tr>
+                <?php
+                    printTable(mysqli_query($con,
+                        "
+                        SELECT
+                            email_id,
+                            full_name,
+                            city,
+                            bank_name,
+                            branch_name,
+                            ifsc_branch_code,
+                            account_no
+                        FROM
+                            BankDetails
+                        ORDER BY id
+                        "
+                    )); 
+                ?>
+            </table>
+            <h2>Products</h2>
+            <table>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Description</th>
+                    <th>Price (in paisa)</th>
+                    <th>Inventory Size</th>
+                    <th>Seller</th>
+                </tr>
+                <?php
+                    printTable(mysqli_query($con,
+                    "
+                    SELECT
+                        name,
+                        description,
+                        price_in_paisa,
+                        inventory_size,
+                        seller_email_id
+                    FROM Products
+                    ORDER BY product_code;
+                    "
+                    ));
+                ?>
+            </table>
+            <h2>Product Reviews</h2>
+            <table>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Reviewer</th>
+                    <th>Review Date</th>
+                    <th>Rating</th>
+                    <th>Review Title</th>
+                    <th>Review Text</th>
+                </tr>
+                <?php
+                    printTable(mysqli_query(
+                        $con,
+                        "
+                            SELECT
+                                Products.name,
+                                reviewer_email_id,
+                                review_date,
+                                rating_out_of_five,
+                                review_title,
+                                review_text
+                            FROM ProductReviews 
+                                    JOIN Products USING (product_code)
+                            ORDER BY product_code;
+                        "
+                    ));
+                ?>
+            </table>
+            <h2>Orders and Payments</h2>
+            <table>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Buyer</th>
+                    <th>Seller</th>
+                    <th>Order Status</th>
+                    <th>Payment Amount (in paisa)</th>
+                    <th>Payment Type</th>
+                    <th>Payment Status</th>
+                </tr>
+                <?php
+                    printTable(mysqli_query(
+                        $con,
+                        "
+                            SELECT
+                                Products.name,
+                                Orders.buyer_email_id,
+                                Products.seller_email_id,
+                                Orders.order_status,
+                                Payments.payment_amount_in_paisa,
+                                Payments.payment_type,
+                                Payments.payment_status
+                            FROM Orders
+                                JOIN Payments ON Payments.id = Orders.payment_id
+                                JOIN Products ON Orders.product_code = Products.product_code
+                            ORDER BY Orders.id;
+                        "
+                    ));
+                ?>
+            </table>
+            <h2>Carts</h2>
+            <table>
+                <tr>
+                    <th>Buyer</th>
+                    <th>Price (in paisa)</th>
+                    <th>Product Name</th>
+                    <th>Seller</th>
+                </tr>
+                <?php
+                    printTable(mysqli_query(
+                        $con,
+                        "
+                            SELECT
+                                buyer_email_id,
+                                price_in_paisa,
+                                name,
+                                seller_email_id
+                            FROM Carts
+                                JOIN Products USING (product_code)
+                            ORDER BY Carts.id;
                         "
                     ));
                 ?>

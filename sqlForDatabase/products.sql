@@ -6,6 +6,7 @@ CREATE TABLE Products (
     price_in_paisa bigint(16) NOT NULL,
     is_sold boolean NOT NULL,
     seller_email_id varchar(264) NOT NULL,
+    inventory_size bigint(16) NOT NULL,
     image_path varchar(264),
 
     FOREIGN KEY (seller_email_id) REFERENCES Sellers(email_id) ON DELETE CASCADE,
@@ -58,19 +59,22 @@ INSERT
         description,
         price_in_paisa,
         is_sold,
-        seller_email_id
+        seller_email_id,
+        inventory_size
     ) VALUES (
         'Samazon Fundamentals Water Bottle | 1L | Silver',
         'Refresh yourself with cool water by using this 1 litre bottle!!! Samazon fundamentals brings you the best products in all categories. See a new item on Samazon, but it''s too pricey? Wait 2 weeks and Samazon Fundamentals with come with the same product for half the price! Samazon fundamentals, ''you make it, we remake it and we get rich!''',
         50000,
         false,
-        'samridh.anand.paatni@gmail.com'
+        'samridh.anand.paatni@gmail.com',
+        5
     ), (
         'Samazon Fundamentals Backpack | 5L | Blue',
         'Carry all your stuff in style! Samazon fundamentals brings you the best products in all categories. See a new item on Samazon, but it''s too pricey? Wait 2 weeks and Samazon Fundamentals with come with the same product for half the price! Samazon fundamentals, ''you make it, we remake it and we get rich!''',
         100000,
         false,
-        'samridh.anand.paatni@gmail.com'
+        'samridh.anand.paatni@gmail.com',
+        4
     );
 
 INSERT
