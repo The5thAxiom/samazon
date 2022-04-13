@@ -1,5 +1,5 @@
 <?php
-    require '../values/database_credentials.php';
+    require '../static/database_connection.php';
 
     // if (!$con) {
     //     die('Database Connection Error<br>'.mysqli_error());

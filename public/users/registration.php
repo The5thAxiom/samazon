@@ -1,16 +1,26 @@
 <?php
-    require '../values/database_credentials.php';
+    require '../static/database_connection.php';
 
     function handleNull(string $str): string {
         if ($str == '') return 'NULL';
         else return "'$str'";
     }
-
     // Accounts
     $email_id = mysqli_real_escape_string($con, $_POST['email_id']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
     $user_is_seller = $_POST['seller'] == 'Y' ? 'true' : 'false';
-    $user_is_buyer = $_POST['buyer'] == 'Y' ? 'true' : 'false';
+    $image_path = '';
+    // user image
+    if (array_key_exists("user_image", $_FILES)) { // if an image was uploaded
+        $filename = $_FILES["user_image"]["name"];
+        $tempname = $_FILES["user_image"]["tmp_name"];
+
+        $upload_dir = '../assets/db/accounts/';
+        $upload_file = $upload_dir . $email_id . $filename;
+        move_uploaded_file($tempname, $upload_file);
+        $image_path = '/assets/db/accounts/'. $email_id . $filename;
+    }
+    $image_path = handleNull($image_path);
 
     // PersonalDetails Table
     $country_code = mysqli_real_escape_string($con, $_POST['country_code']);
@@ -42,21 +52,16 @@
             email_id,
             password,
             user_is_seller,
-            user_is_buyer
+            image_path
         ) VALUES (
             '$email_id',
             '$password',
             $user_is_seller,
-            $user_is_buyer
+            $image_path
         );
     ";
 
     $insert_seller = "";
-    $insert_buyer = "";
-
-    if ($user_is_buyer === 'true') {
-        $insert_buyer = "INSERT INTO Buyers (email_id) VALUES ('$email_id')";
-    }
 
     if ($user_is_seller === 'true') {
         $insert_seller = "INSERT INTO Sellers (email_id) VALUES ('$email_id')";
@@ -130,7 +135,6 @@
 
     if (
         mysqli_query($con, $insert_account) &&
-        ($user_is_buyer == 'false' || mysqli_query($con, $insert_buyer)) &&
         ($user_is_seller == 'false' || mysqli_query($con, $insert_seller)) &&
         mysqli_query($con, $insert_personal) &&
         mysqli_query($con, $insert_address) &&

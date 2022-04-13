@@ -12,7 +12,7 @@
     Your soul will stand a chance at the trials after the ends just
     by registering as a user!<br />
     <h2>Enter your details here:</h2>
-    <form action="registration.php" method="post">
+    <form action="registration.php" method="post" enctype="multipart/form-data">
         <fieldset id="personal-details">
             <legend>Personal Details</legend>
             <label for="first_name">First Name (required):</label>
@@ -101,14 +101,14 @@
             <input type="radio" name="seller" value="Y" />
             <span class="formtext">Yes</span> <br />
             <input type="radio" name="seller" value="N" />
-            <span class="formtext">No</span>
-            <br /><br />
-            <label for="buyer">Are you planning to be a buyer?</label>
-            <br />
-            <input type="radio" name="buyer" value="Y" />
-            <span class="formtext">Yes</span> <br />
-            <input type="radio" name="buyer" value="N" />
-            <span class="formtext">No</span><br /><br />
+            <span class="formtext">No</span> <br/>
+            <label for="user_image">Upload your image to help us recognize you!</label><br/>
+            <input
+                type="file"
+                id="user_image"
+                name="user_image"
+                accept=".jpg,.jpeg,.png,.gif,.bmp"
+            />
         </fieldset>
         <br />
         <fieldset id="address">
