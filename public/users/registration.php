@@ -52,11 +52,13 @@
             email_id,
             password,
             user_is_seller,
+            joined_on,
             image_path
         ) VALUES (
             '$email_id',
             '$password',
             $user_is_seller,
+            DATE(SYSDATE()),
             $image_path
         );
     ";
