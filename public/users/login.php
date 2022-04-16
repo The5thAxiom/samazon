@@ -1,6 +1,7 @@
 <?php
-    $heading = 'WIP | Please come later';
-    $title = 'WIP | Please come later';
+    session_start();
+    $heading = 'Login';
+    $title = 'Login';
     $path_to_public = '../';
     $links = [
         ['title' => 'Home', 'href' => 'index.php'],
