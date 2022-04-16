@@ -7,7 +7,10 @@
     }
     // Accounts
     $email_id = mysqli_real_escape_string($con, $_POST['email_id']);
-    $password = mysqli_real_escape_string($con, $_POST['password']);
+    $password = mysqli_real_escape_string(
+        $con,
+        password_hash($_POST['password'], PASSWORD_DEFAULT)
+    );
     $user_is_seller = $_POST['seller'] == 'Y' ? 'true' : 'false';
     $image_path = '';
     // user image
@@ -18,7 +21,7 @@
         $upload_dir = '../assets/db/accounts/';
         $upload_file = $upload_dir . $email_id . $filename;
         move_uploaded_file($tempname, $upload_file);
-        $image_path = '/assets/db/accounts/'. $email_id . $filename;
+        $image_path = 'assets/db/accounts/'. $email_id . $filename;
     }
     $image_path = handleNull($image_path);
 

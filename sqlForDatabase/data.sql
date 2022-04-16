@@ -7,13 +7,13 @@ INSERT
         image_path
     ) VALUES (
         'samridh.anand.paatni@gmail.com',
-        'samridh',
+        '$2y$10$bzpEK46A8STfZQH51Byw.essn1jyX3Dg2bIYkKA7Tx5MlFCRT8TLq', -- samridh
         DATE(SYSDATE()),
         true,
         'assets/db/accounts/account_1.jpeg'
     ), (
         'elessar6969@hotmale.com',
-        'youBowToNoOne',
+        '$2y$10$uGVsYNaeLDTtjRGMwVTPvec.DDwAwUk52UIR5RE/kxsMQnOMMy8.u', -- youBowToNoOne
         DATE(SYSDATE()),
         false,
         'assets/db/accounts/account_2.jpeg'

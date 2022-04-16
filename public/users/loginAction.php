@@ -1,14 +1,10 @@
 <?php
     require '../static/database_connection.php';
 
-    // if (!$con) {
-    //     die('Database Connection Error<br>'.mysqli_error());
-    // }
-
     $email_id = mysqli_real_escape_string($con, $_POST['email_id']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
 
-    $actualPassword = mysqli_fetch_array(
+    $result = mysqli_fetch_array(
         mysqli_query(
             $con,
             "
@@ -21,10 +17,15 @@
                 ;
             "
         )
-    )[0];
+    );
+    if ($result) {
+        $actualPassword = $result[0];
+        if (password_verify($password, $actualPassword))
+            echo "Welcome $email_id!";
+        else echo 'Wrong Password';
 
-    if ($actualPassword == $password) echo readfile('customer.php');
-    else echo 'Wrong Password';
+    }
+    else echo 'Wrong email';
 
     mysqli_close($con);
 ?>
