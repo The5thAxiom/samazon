@@ -190,6 +190,7 @@ nav.bottom {
 main {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 aside {

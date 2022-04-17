@@ -9,17 +9,15 @@
         "';";
     $result = mysqli_fetch_assoc(mysqli_query($con, $get_name));
 
-    foreach ($result as $key => $value)
-        echo $key . " => " . $value;
+    // foreach ($result as $key => $value)
+    //     echo $key . " => " . $value;
 
     $heading = "Welcome back " . $result['first_name'];
     $title = 'SamaZon Shopping';
     $path_to_public = '../';
     $links = [
         ["title" => "Profile", "href" => "#"],
-        ["title" => "Cart", "href" => "#"],
-        ["title" => "Wishlists", "href" => "#"],
-        ["title" => "Recents", "href" => "#"],
+        ["title" => "Cart", "href" => "users/cart.php"],
         ["title" => "Logout", "href" => "users/logoutAction.php"],
     ];
     require '../templates/top.php';
@@ -90,8 +88,7 @@
         <hr />
         <a class="navlink" href="#Categories">Categories</a><br />
         <hr />
-        <a class="navlink" href="#UpcomingSellers">Upcoming Sellers</a
-        ><br />
+        <a class="navlink" href="#UpcomingSellers">Upcoming Sellers</a><br />
         <hr />
         <a class="navlink" href="#BuyAgain">Buy Again</a><br />
         <hr />
